@@ -634,9 +634,9 @@ color: var(--secondary-color-white);
 
 .modal {
 	position: absolute;
-	top: 88px;
-	left: calc( 50% - 204px );
-	transform: rotate(0) scale(1);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(0) scale(1);
 	opacity: 1;
 
 	transition: transform 600ms ease 200ms, opacity 600ms ease 200ms;
@@ -653,13 +653,18 @@ color: var(--secondary-color-white);
 }
 
 .bacdroup.is-hidden .modal {
-	transform: rotate(360deg) scale(0.2);
+	transform: translate(-50%, -50%) rotate(360deg) scale(0.2);
 	opacity: 0;
 }
 
 .modal-btn {
-	display: block;
-	margin-left: auto;
+	position: absolute;
+	top: 24px;
+	right: 24px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	width: 24px;
 	height: 24px;
@@ -669,4 +674,12 @@ color: var(--secondary-color-white);
 	border: 1px solid rgba(0, 0, 0, 0.1);
 
 	cursor: pointer;
+
+	transition: background-color var(--animation) fill var(--animation) ;
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+	background-color: var(--accent-color-ocean);
+	fill: var(--secondary-color-white) ;
 }
